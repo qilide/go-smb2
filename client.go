@@ -1831,6 +1831,9 @@ func (f *File) copyTo(wf *File) (supported bool, n int64, err error) {
 
 		n += int64(c.TotalBytesWritten())
 
+		off += maxTotalSize
+		woff += maxTotalSize
+
 		if remains == 0 {
 			return true, n, nil
 		}
